@@ -1,0 +1,61 @@
+#include<stdio.h>
+int main()
+{
+    int n,i,array[10],sum=0,arrival=0,
+    waiting_time,exit_time,total_around_time=0,exit=0,turn_around_t=0,
+    turn_around_w=0;
+    float avg;
+    printf("Enter the n number: ");
+    scanf("%d",&n);
+    printf("Enter the Burst Time\n");
+    for(i=1;i<=n;i++)
+    {
+    printf("P%d : ",i=i);
+    scanf("%d",&array[i]);
+    }
+    for(i=1;i<=n;i++)
+    {
+        printf("----------------");
+    }
+printf("\n");
+for(i=1;i<=n;i++)
+    {
+        printf("| \t p%d \t",i=i);
+    }
+printf("|\n");
+for(i=1;i<=n;i++)
+    {
+        printf("----------------");
+    }
+printf("\n");
+printf("%d\t\t",arrival);
+for(i=1;i<=n;i++)
+{
+   exit=exit+array[i];
+   printf("%d \t \t",exit);
+}
+printf("\n\n");
+for(i=1;i<=n;i++)
+{
+    sum=sum+array[i];
+    printf("Exit time: %d\n",sum);
+}
+printf("\n\n");
+for(i=1;i<=n;i++)
+{
+    turn_around_t=turn_around_t+array[i];
+    exit_time=turn_around_t-arrival;
+    printf("Turn Around Time = %d\n",exit_time);
+   total_around_time=total_around_time+exit_time;
+}
+printf("\n\n");
+    for(i=1;i<=n;i++)
+    {
+    turn_around_w=turn_around_w+array[i];
+    exit_time=turn_around_w-arrival;
+    printf("Waiting Time = %d\n",waiting_time= exit_time-array[i]);
+    }
+printf("\nTotal Around Time: %d",total_around_time);
+avg=total_around_time/n;
+printf("\nAverage Total Time: %.2f",avg);
+}
